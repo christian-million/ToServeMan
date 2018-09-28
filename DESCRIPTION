@@ -1,0 +1,10 @@
+Package: ToSurveyMan
+Type: Package
+Title: Functions to handle Survey Data
+Version: 0.0.0.9000
+Authors@R: person("Christian", "Million", email = "christianmillion93@gmail.com", role = c("aut", "cre"))
+Description: A way for me to learn about classes and methods in R using survey data.
+Depends: R (>= 3.5.1)
+License: GPL-2|GPL-3
+Encoding: UTF-8
+LazyData: true
