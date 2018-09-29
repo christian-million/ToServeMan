@@ -21,18 +21,12 @@ as.survey <- function(x,          # An object to coerce to class "survey"
 }
 # test <- surveyr::sample_survey
 # test <- as.survey(test, q.desc = qdesc, item.lbl = itemlbl, resp.type = resptype)
-# qdesc <- surveyr::schema[["q_description"]]
-# itemlbl <- surveyr::schema[["q_detail"]]
-# resptype <- surveyr::schema[["q_type"]]
+# qdesc <- surveyr::sample_schema[["q_description"]]
+# itemlbl <- surveyr::sample_schema[["q_detail"]]
+# resptype <- surveyr::sample_schema[["q_type"]]
 
-#get_item <- function(x, Q){
-#
-#  w <- grep(Q, resp_type(x))
-#  return(w)
-#
-#}
-#test[get_item(x = test, Q = "ordinal")]
 
+## Attributes ------------------
 item_lbl <- function(x){
   attr(x, "item.lbl")
 }
@@ -40,7 +34,6 @@ item_lbl <- function(x){
   attr(x, "item.lbl") <- value
   x
 }
-
 
 q_desc <- function(x){
   attr(x, "q.desc")
@@ -55,5 +48,16 @@ resp_type <- function(x){
 }
 "resp_type<-" <- function(x, value){
   attr(x, "resp.type") <- value
+  x
+}
+
+## Classes -------------------------------
+
+add_class <- function(x, value){
+  class(x) <- c(value, class(x))
+  x
+}
+"add_class<-" <- function(x, value){
+  class(x) <- c(value, class(x))
   x
 }
