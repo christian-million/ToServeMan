@@ -1,11 +1,13 @@
 # Find Better Way to access variables based on non-name attributes
 
-get_resp_type <- function(x, Q){
-
-  w <- grep(Q, resp_type(x))
-  return(w)
-
+get_response <- function(x){
+  responses <- sapply(x, is.response)
+  x[responses]
 }
 
-#test[get_item(x = test, Q = "ordinal")]
+get_categorical <- function(x){
+  cats <- sapply(x, is.categorical)
+  x[cats]
+}
 
+#TO-DO: Create GET Functions for rest of response_type classes
