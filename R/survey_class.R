@@ -21,12 +21,6 @@ as.survey <- function(x,          # An object to coerce to class "survey"
 
 }
 
-# test <- surveyr::sample_survey
-# test <- as.survey(test, q.desc = qdesc, item.lbl = itemlbl, resp.type = resptype)
-# qdesc <- surveyr::sample_schema[["q_description"]]
-# itemlbl <- surveyr::sample_schema[["q_detail"]]
-# resptype <- surveyr::sample_schema[["q_type"]]
-
 
 ## Assign Attributes ------------------
 item_lbl <- function(x){

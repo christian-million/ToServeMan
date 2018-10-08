@@ -1,3 +1,6 @@
+# Considering Putting Scales into a continually evolving DataFrame
+# Which is then accessed with a single function and a specified argument
+
 agree_scale <- function(reverse = FALSE){
 
   lvl <- c("Strongly Agree", "Agree", "Neither Agree or Disagree",
