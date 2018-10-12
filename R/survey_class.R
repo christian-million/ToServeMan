@@ -1,11 +1,13 @@
 as.survey <- function(x,          # An object to coerce to class "survey"
-                      q.desc,     # Vector or list of question description
-                      item.lbl,   # Vector or list of item labels
-                      resp.type,  # Vector or list of response types
+                      q.desc    = NULL,     # Vector or list of question description
+                      item.lbl  = NULL,   # Vector or list of item labels
+                      resp.type = NULL,  # Vector or list of response types
                       resp.opts = NULL){ # Optional to pass factor levels
 
   # Assign Attribute Arguments
+  if(!is.null(resp.type)){
   x <- as.data.frame(Map("resp_type<-", x, resp.type), stringsAsFactors = FALSE)
+  }
   q_desc(x)    <- q.desc
   item_lbl(x)  <- item.lbl
 
@@ -50,9 +52,9 @@ add_class <- function(x, value){
   x
 }
 
-resp_type <- function(x, value){
-  add_class(x) <- value
-  x
+resp_type <- function(x){
+  types <- sapply(x, class)
+  return(types)
 }
 "resp_type<-" <- function(x, value){
   add_class(x) <- value
